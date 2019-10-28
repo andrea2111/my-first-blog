@@ -6,17 +6,12 @@
         <div>
             <h1><a href="/">Ea's Blogg</a></h1>
         </div>
-
-        <div>
-            <p>Publicerat 28.10.2019, 19:21</p>
-            <h2><a href="">Mitt första inlägg</a></h2>
-            <p>Texttexttext osv!</p>
-        </div>
-
-        <div>
-            <p>Publicerat 28.10.2019, 19:23</p>
-            <h2><a href="">Mitt andra inlägg</a></h2>
-            <p>Meratexttextetxt osv.</p>       
-        </div>
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
     </body>
 </html>
